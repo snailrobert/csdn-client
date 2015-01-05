@@ -1,6 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?>
+<com.robert.library.view.CustomDrawer xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:mdPosition="left"
+    app:mdMenuSize="160dp">
+    <LinearLayout
+        android:id="@id/mdMenu"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/left_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/mdContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.robert.library.view.PagerSlidingTabStrip
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="35dip"
+            android:layout_alignParentBottom="true"
+            app:pstsDividerColor="#00000000"
+            app:pstsIndicatorColor="#FF33B5E6"
+            app:pstsTabPaddingLeftRight="14dip"
+            app:pstsUnderlineColor="#FF33B5E6" />
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_above="@id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v4.view.ViewPager>
+    </RelativeLayout>
 
-</RelativeLayout>
+
+</com.robert.library.view.CustomDrawer>
