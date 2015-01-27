@@ -11,5 +11,21 @@
         android:textColor="#00ff00"
         android:text="Jump"
         android:layout_centerInParent="true"/>
+    <ImageView
+        android:id="@+id/one_image_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/click_button_id"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dip"
+        android:src="@drawable/ic_launcher"/>
+    <com.robert.library.volley.toolbox.NetworkImageView
+        android:id="@+id/two_image_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/one_image_id"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dip"
+        android:src="@drawable/ic_launcher"/>
 
 </RelativeLayout>
