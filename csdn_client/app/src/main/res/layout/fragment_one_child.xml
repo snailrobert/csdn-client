@@ -1,44 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.robert.today.csdn_client.view.CustomLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff">
-    <RelativeLayout
-        android:id="@+id/fragment_one_child_main"
+    <TextView
+        android:id="@+id/test_text"
+        android:textSize="24sp"
+        android:textColor="#00000f"
+        android:gravity="center"
+        android:text="000"
+        android:background="#ff0000"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/test_text"
-            android:textSize="24sp"
-            android:textColor="#00000f"
-            android:layout_centerInParent="true"
-            android:text="000"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        android:layout_height="60dip" />
 
-        <!-- LinearLayout内含有divider -->
-        <LinearLayout
+    <!-- LinearLayout内含有divider -->
+    <LinearLayout
+        android:id="@+id/bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dip"
+        android:dividerPadding="10dip"
+        android:background="@color/blue"
+        android:divider="@drawable/ic_launcher"
+        android:showDividers="middle">
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/test_text"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dip"
-            android:dividerPadding="10dip"
-            android:background="@color/blue"
-            android:divider="@drawable/ic_launcher"
-            android:showDividers="middle">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher"
-                android:layout_weight="1"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher"
-                android:layout_weight="1"/>
-        </LinearLayout>
-        </RelativeLayout>
+            android:src="@drawable/ic_launcher"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/test_text2"
+        android:textSize="24sp"
+        android:textColor="#00000f"
+        android:background="#00ff00"
+        android:text="111"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="60dip" />
+
+</com.robert.today.csdn_client.view.CustomLinearLayout>

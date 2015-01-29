@@ -16,7 +16,6 @@ public class OneChildFragment extends BaseFragment {
     private static String COLOR_BACKGROUND = "color_background";
     private int mPos = 0;
 
-    private View mContentView;
     private TextView mTestText;
 
     public static OneChildFragment newInstance(int pos) {
@@ -54,7 +53,6 @@ public class OneChildFragment extends BaseFragment {
             mPos = getArguments().getInt("pos_tag", 0);
         }
 
-        mContentView = view.findViewById(R.id.fragment_one_child_main);
         mTestText = (TextView) view.findViewById(R.id.test_text);
         mTestText.setText(String.valueOf(mPos));
         mTestText.setTextColor(getBackgroundColor(mPos));
