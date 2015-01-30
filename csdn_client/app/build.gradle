@@ -13,6 +13,7 @@ dependencies {
 //    androidTestCompile 'xerces:xercesImpl:2.7.1'
 
     compile project(':library')
+    compile 'de.greenrobot:eventbus:2.4.0'
     // compile 'com.android.support:appcompat-v7:21.0.3'
 
 }

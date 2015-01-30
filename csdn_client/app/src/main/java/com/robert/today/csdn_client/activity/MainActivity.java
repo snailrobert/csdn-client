@@ -29,6 +29,8 @@ import com.robert.today.csdn_client.fragment.OneFragment;
 import com.robert.today.csdn_client.fragment.ThirdFragment;
 import com.robert.today.csdn_client.fragment.TwoFragment;
 
+import de.greenrobot.event.EventBus;
+
 /**
  * Created by chenjun06 on 2015/1/5.
  */
@@ -110,7 +112,6 @@ public class MainActivity extends SherlockFragmentActivity implements LeftMenuAd
                 mOneFragment.replaceFragment(pos);
             }
         }
-
         mMenuDrawer.closeMenu();
     }
 
