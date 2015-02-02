@@ -15,6 +15,16 @@ import java.lang.reflect.Field;
  */
 public abstract class BaseFragment extends Fragment implements MainActivity.KeyDownListener {
 
+    private String mType = "BaseFragment";
+
+    public void setType(String type) {
+        mType = type;
+    }
+
+    public String getType() {
+        return mType;
+    }
+
     public abstract void onBackPress();
 
     @Override

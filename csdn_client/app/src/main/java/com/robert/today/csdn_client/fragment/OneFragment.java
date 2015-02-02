@@ -23,6 +23,7 @@ public class OneFragment extends BaseFragment {
     public static OneFragment newInstance(int currentPos) {
         if(null == mOneFragment) {
             mOneFragment = new OneFragment();
+            mOneFragment.setType("OneFragment");
             Bundle bundle = new Bundle();
             bundle.putInt("current_pos", currentPos);
             mOneFragment.setArguments(bundle);

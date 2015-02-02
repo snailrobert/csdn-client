@@ -15,6 +15,7 @@ public class TestFragment extends BaseFragment {
 
     public static TestFragment newInstance(int showText) {
         TestFragment testFragment = new TestFragment();
+        testFragment.setType("TestFragment");
         Bundle args = new Bundle();
         args.putInt("show_text", showText);
         testFragment.setArguments(args);

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.robert.today.csdn_client.R;
+import com.robert.today.csdn_client.utils.AppLog;
 
 /**
  * Created by chenjun06 on 2014/12/26.
@@ -20,6 +21,7 @@ public class OneChildFragment extends BaseFragment {
 
     public static OneChildFragment newInstance(int pos) {
         OneChildFragment f = new OneChildFragment();
+        f.setType("OneChildFragment");
         Bundle args = new Bundle();
         args.putInt("pos_tag", pos);
         f.setArguments(args);

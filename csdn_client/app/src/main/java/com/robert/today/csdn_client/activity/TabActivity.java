@@ -7,7 +7,6 @@ import android.view.MotionEvent;
 import android.view.Window;
 
 import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.robert.today.csdn_client.R;
@@ -18,11 +17,12 @@ import com.robert.today.csdn_client.fragment.TestFragment;
 /**
  * Created by chenjun06 on 2015/1/4.
  */
-public class TabActivity extends SherlockFragmentActivity {
+public class TabActivity extends BaseSherlockFragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setType("TabActivity");
         // 使ActionBar透明
         requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
         setContentView(R.layout.activity_tab);

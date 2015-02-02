@@ -13,7 +13,6 @@ import android.util.TypedValue;
 import android.view.View;
 
 import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.robert.library.view.PagerSlidingTabStrip;
 import com.robert.today.csdn_client.R;
 import com.robert.today.csdn_client.adapter.LeftMenuAdapter;
@@ -29,12 +28,10 @@ import com.robert.today.csdn_client.fragment.OneFragment;
 import com.robert.today.csdn_client.fragment.ThirdFragment;
 import com.robert.today.csdn_client.fragment.TwoFragment;
 
-import de.greenrobot.event.EventBus;
-
 /**
  * Created by chenjun06 on 2015/1/5.
  */
-public class MainActivity extends SherlockFragmentActivity implements LeftMenuAdapter.MenuItemListener  {
+public class MainActivity extends BaseSherlockFragmentActivity implements LeftMenuAdapter.MenuItemListener  {
 
     String[] mTitles = {"页面1", "页面2", "页面3"};
 
@@ -65,6 +62,7 @@ public class MainActivity extends SherlockFragmentActivity implements LeftMenuAd
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setType("MainActivity");
         setContentView(R.layout.activity_main);
         dm = getResources().getDisplayMetrics();
         initActionBar();
@@ -185,6 +183,7 @@ public class MainActivity extends SherlockFragmentActivity implements LeftMenuAd
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mCustomAdapter = new CustomFragmentAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mCustomAdapter);
+        mViewPager.setOffscreenPageLimit(3);
         mViewPager.setCurrentItem(0);
 
         mPagerTab = (PagerSlidingTabStrip) findViewById(R.id.tabs);

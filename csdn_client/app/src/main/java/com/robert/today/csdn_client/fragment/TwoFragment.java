@@ -25,6 +25,7 @@ public class TwoFragment extends BaseFragment {
     public static TwoFragment newInstance() {
         if(null == mTwoFragment) {
             mTwoFragment = new TwoFragment();
+            mTwoFragment.setType("TwoFragment");
         }
         return mTwoFragment;
     }

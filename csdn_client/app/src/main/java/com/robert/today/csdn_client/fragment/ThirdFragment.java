@@ -18,11 +18,13 @@ import com.robert.library.volley.toolbox.ImageRequest;
 import com.robert.library.volley.toolbox.NetworkImageView;
 import com.robert.library.volley.toolbox.StringRequest;
 import com.robert.library.volley.toolbox.Volley;
+import com.robert.today.csdn_client.AppApplication;
 import com.robert.today.csdn_client.R;
 import com.robert.today.csdn_client.activity.TabActivity;
 import com.robert.today.csdn_client.model.GlobalStagedData;
 import com.robert.today.csdn_client.model.LruImageCache;
 import com.robert.today.csdn_client.model.event.FirstEventMessage;
+import com.robert.today.csdn_client.utils.AppLog;
 import com.robert.today.csdn_client.utils.ImageLoaderTools;
 
 import de.greenrobot.event.EventBus;
@@ -40,6 +42,7 @@ public class ThirdFragment extends BaseFragment {
     public static ThirdFragment newInstance() {
         if(null == mThirdFragment) {
             mThirdFragment = new ThirdFragment();
+            mThirdFragment.setType("ThirdFragment");
         }
         return mThirdFragment;
     }
@@ -51,13 +54,14 @@ public class ThirdFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        AppLog.printLog(this, "onCreateView");
         return inflater.inflate(R.layout.fragment_third, null);
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        AppLog.printLog(this, "onViewCreated");
         mAq = new AQuery(view);
         mAq.id(R.id.click_button_id).clicked(new View.OnClickListener() {
             @Override
@@ -81,19 +85,29 @@ public class ThirdFragment extends BaseFragment {
 
     @Override
     public boolean getUserVisibleHint() {
+        AppLog.printLog(this, "getUserVisibleHint");
         return super.getUserVisibleHint();
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        AppLog.printLog(this, "onResume");
         EventBus.getDefault().register(this);
     }
 
     @Override
     public void onPause() {
         super.onPause();
+        AppLog.printLog(this, "onPause");
         EventBus.getDefault().unregister(this);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        AppLog.printLog(this, "onDestroyView");
+        AppLog.testLogDatabase((AppApplication)(this.getActivity().getApplication()), "ThirdFragment");
     }
 
     private void readBitmapViaVolley(String imgUrl, final ImageView imageView) {
@@ -135,6 +149,7 @@ public class ThirdFragment extends BaseFragment {
 
     // send event
     private void sendShowImageEvent() {
+        AppLog.printLog(this, "sendShowImageEvent");
         if(EventBus.getDefault().isRegistered(this)) {
             FirstEventMessage firstEvent = new FirstEventMessage();
             firstEvent.setShowImage(mIsShowImage);
